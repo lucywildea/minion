@@ -17,6 +17,24 @@ Repository: `https://github.com/lugenx/minion`
 
 For installation, updates, daemon operation, or troubleshooting, read [`references/setup.md`](references/setup.md).
 
+## Hermes integration
+
+The official Hermes integration consists of this normal user skill and the web provider in `integrations/hermes`. It uses the Minion binary installed on the operating system. It does not install or maintain a second Minion copy.
+
+After obtaining approval for installation, configuration, and restart actions:
+
+1. Install or update Minion by following [`references/setup.md`](references/setup.md).
+2. Verify `minion --version` and `minion --help`.
+3. Install this skill into the user's normal Hermes skills directory:
+   `hermes skills install https://raw.githubusercontent.com/lugenx/minion/main/integrations/hermes/skills/minion/SKILL.md --name minion`
+4. Install and enable the provider:
+   `hermes plugins install lugenx/minion/integrations/hermes --enable`
+5. Select the provider:
+   `hermes config set web.search_backend minion`
+6. Restart Hermes, begin a new session, and verify one real `web_search` call.
+
+The provider runs synchronous inline searches without `do`, so ordinary Hermes searches do not require an LLM call from Minion. It parses Minion's native multi-document YAML output. Valid records remain usable when another source fails.
+
 ## Choose the right mode
 
 - **One-off task:** use an inline run. It is synchronous, skips persistent deduplication, and emits a YAML document stream on stdout.

@@ -310,7 +310,9 @@ If not set, falls back to the `DEFAULT_MODEL` environment variable in `.env`.
 
 ## Automating with AI agents
 
-Minion works well on its own, and it is also a good fit for agent-assisted workflows. If you use an AI coding or assistant agent, point it at [`AGENTS.md`](AGENTS.md). It will pick up the repository skill in [`skills/minion/`](skills/minion/SKILL.md), covering installation, one-off research, saved monitors, operation, updates, and troubleshooting, and install it using whatever skill mechanism your agent supports.
+Minion works well on its own and in agent-assisted workflows. Point an AI coding or assistant agent at [`AGENTS.md`](AGENTS.md). The repository instructions cover Minion installation and direct agents to the appropriate integration.
+
+Hermes users can install the normal Minion skill and the official search provider from [`integrations/hermes/`](integrations/hermes/). The provider calls the Minion binary already installed on the operating system. It does not bundle another copy.
 
 ---
 

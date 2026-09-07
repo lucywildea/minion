@@ -22,3 +22,7 @@ Thumbs.db
 # Go
 vendor/
 go.work
+
+# Python integration caches
+__pycache__/
+*.py[cod]

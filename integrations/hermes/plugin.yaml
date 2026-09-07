@@ -1,0 +1,8 @@
+name: web-minion
+version: 1.0.0
+description: "Minion web search provider for Hermes Agent. Uses the Minion binary installed on the operating system."
+author: lugenx
+license: MIT
+kind: backend
+provides_web_providers:
+  - minion
